@@ -1,0 +1,161 @@
+:root {
+  --blue: #0d6efd;
+  --blue-100: #cce0ff;
+  --blue-200: #99c2ff;
+  --blue-300: #66a3ff;
+  --blue-400: #3385ff;
+  --blue-500: #0d6efd;
+  --blue-600: #0c55db;
+  --blue-700: #093f9c;
+  --blue-800: #072d6c;
+  --blue-900: #051c3d;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.album-zone{
+    background-color: #b5f2ef;
+    
+}
+
+.album{
+  min-height: 54vh;
+}
+
+.nav-index, footer{
+    background-color: var(--blue-900);
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+  .head-h1{
+    margin: 0;
+}
+}
+
+.head-h1{
+    margin: 0 2.5rem;
+}
+
+.error {
+  color: #fff; 
+  margin: 10px 2px; 
+  font-size: 0.8em;
+  font-weight: bold";
+}
+
+.edit-icon{
+  cursor: pointer;
+}
+
+.navbar-section{
+  background-color: #333333;
+}
+
+
+.btn-light-gray{
+  background-color: #f1f1f1;
+}
+
+.btn-light-gray:hover{
+  background-color: #c1c1c1;
+}
+
+
+.btn-dark-gray {
+  background-color: #333333;
+  color: #f1f1f1; /* text color for the button */
+}
+
+.btn-dark-gray:hover {
+  background-color: #666666;
+}
+
+
+.card {
+  height: 300px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-text-wrapper {
+  overflow-y: scroll;
+  height: 150px;
+}
+
+.btn-design-login{
+  background-color: var(--blue-400)
+}
+.btn-design-price{
+  border: 1px solid var(--blue-200);
+}
+
+.btn-design-login:hover, .btn-design-price:hover{
+  background-color: var(--blue-200)
+}
+
+.btn-design-signup{
+  background-color: var(--blue-200)
+}
+
+.btn-design-signup:hover{
+  background-color: var(--blue-100)
+}
+
+.btn-design-logout{
+  background-color: var(--blue-100);
+}
+
+.bg-container{
+  background-color: var(--blue-100);
+}
+
+.user-color{
+  color: #f9ca24;
+}
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+section {
+  margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item {
+    transition-duration: 0.6s;
+    transform: translateX(0);
+  }
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.33%);
+  }
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.33%);
+  }
+}
+
+.movie-text{
+  font-size: 3.5rem;
+}
+
+

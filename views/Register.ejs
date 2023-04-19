@@ -1,0 +1,81 @@
+<%- include("./partials/header") %>
+<link rel="stylesheet" href="/stylesheets/styles.css" />
+<title>Register</title>
+</head>
+    <section>
+        <div class="color">
+         </div>
+        <div class="color">
+         </div>
+        <div class="color">
+         </div>  
+        <div class="box">
+            <div class="square" style="--i:0"></div>
+            <div class="square" style="--i:1"></div>
+            <div class="square" style="--i:2"></div>
+            <div class="square" style="--i:3"></div>
+            <div class="square" style="--i:4"></div>
+            <div class="container">
+                <div class="form">
+                    <h2>Sign up</h2>
+                    <form method="POST" action="/users/register">
+
+                        <div class="inputBox">
+                            <% if (locals.error) { %>
+                                <% if (error === "fullName is not allowed to be empty") { %>
+                                <p class="error"> Full name is not allowed to be empty, please fill</p>
+                                <% } %>
+                           <% } %>
+                            <input type="text" name="fullName" placeholder="Full Name" id="name">
+                        </div>
+                        <div class="inputBox">
+                            <% if (locals.error) { %>
+                                <% if (error === "username is not allowed to be empty") { %>
+                                <p class="error"> Username is not allowed to be empty, please fill
+                                </p>
+                                <% } %>
+                           <% } %>
+                            <input type="text" name="username" placeholder="Username" id="username">
+                        </div>
+                        <div class="inputBox">
+                            <% if (locals.error) { %>
+                                <% if (error.includes("Email already exists")) { %>
+                                  <p class="error">Email is already taken kindly change it</p>
+                                <% } else if (error === "email is not allowed to be empty"){ %>
+                                  <p class="error">Email is not allowed to be empty, please fill.</p>
+                                <% } %>
+                              <% } %>
+                              
+                            <input type="text" name="email" placeholder="email" id="email">
+                        </div>
+                        <div class="inputBox">
+                            <% if (locals.error) { %>
+                                <% if (error === "password is not allowed to be empty") { %>
+                                <p class="error"> <%= error%>
+                                </p>
+                                <% } %>
+                           <% } %>
+                            <input type="password" name="password" placeholder="Password" id="password">
+                        </div>
+                        <div class="inputBox">
+                            <% if (locals.error) { %>
+                                <% if (error === "Confirm password does not match") { %>
+                                <p class="error"> <%= error%>
+                                </p>
+                                <% } %>
+                           <% } %>
+                            <input type="password" placeholder="Confirm Password" 
+                            name="confirmPassword"
+                            id="confirmPassword">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit">
+                        </div>
+                        <p class="forget">Don't have an account? <a href="/login"> Sign in</a></p>
+                        <small class="forget-small">Back to <a href="/">home</a></small>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("./partials/footer") %>
