@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.editMovieSchema = exports.addMovieSchema = exports.loginUserSchema = exports.variables = exports.registerUserSchema = void 0;
+exports.editMovieSchema = exports.addMovieSchema = exports.loginUserSchema = exports.options = exports.registerUserSchema = void 0;
 const joi_1 = __importDefault(require("joi"));
 exports.registerUserSchema = joi_1.default.object().keys({
     fullname: joi_1.default.string().required(),
@@ -13,7 +13,7 @@ exports.registerUserSchema = joi_1.default.object().keys({
     // .label('Password').messages({'any.only': '{#label} must contain only alphabets and numbers' }),
     confirm_password: joi_1.default.any().equal(joi_1.default.ref('password')).required().label('Confirm password').messages({ 'any.only': '{#label} does not match' })
 });
-exports.variables = {
+exports.options = {
     abortEarly: false,
     errors: {
         wrap: {

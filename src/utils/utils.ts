@@ -9,7 +9,7 @@ export const registerUserSchema = Joi.object().keys({
     confirm_password: Joi.any().equal(Joi.ref('password')).required().label('Confirm password').messages({'any.only': '{#label} does not match' })
 })
 
-export const variables = {
+export const options = {
     abortEarly: false,
     errors: { 
         wrap: {

@@ -14,13 +14,13 @@ export const auth = async (
     const authorization = req.cookies.token;
 
     if (!authorization) {
-      return res.redirect("/users/login");
+      return res.redirect("/login");
     }
 
     const verifiedUser: any = jwt.verify(authorization, jwtsecret);
 
     if (!verifiedUser) {
-      return res.redirect("/users/login");
+      return res.redirect("/login");
     }
 
     const { id } = verifiedUser as { [key: string]: any };
@@ -28,13 +28,15 @@ export const auth = async (
     const user = await UserModel.findOne({ _id: id });
 
     if (!user) {
-      return res.redirect("/users/login");
+      return res.redirect("/login");
     }
-
-    req.user = verifiedUser;
+    req.user = {
+      id,
+      username: user.username 
+    };
     next();
   } catch (err) {
-    return res.redirect("/users/login");
+    return res.redirect("/login");
   }
 };
 

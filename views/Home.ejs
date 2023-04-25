@@ -136,9 +136,24 @@
             </div>
           <% }) %>
         </div>
+        <nav>
+          <ul class="pagination justify-content-center">
+            <% if (currentPage > 1) { %>
+              <li class="page-item"><a class="page-link" href="?page=<%= currentPage - 1 %>">&laquo; Previous</a></li>
+            <% } %>
+            <% for (let i = 1; i <= totalPages; i++) { %>
+              <li class="page-item <% if (i === currentPage) { %>active<% } %>"><a class="page-link" href="?page=<%= i %>"><%= i %></a></li>
+            <% } %>
+            <% if (currentPage < totalPages) { %>
+              <li class="page-item"><a class="page-link" href="?page=<%= currentPage + 1 %>">Next &raquo;</a></li>
+            <% } %>
+          </ul>
+        </nav>
       </div>
     </div>
+   
   </main>
+ 
   
 
 <footer class=" text-light py-3">

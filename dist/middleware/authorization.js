@@ -12,22 +12,25 @@ const auth = async (req, res, next) => {
     try {
         const authorization = req.cookies.token;
         if (!authorization) {
-            return res.redirect("/users/login");
+            return res.redirect("/login");
         }
         const verifiedUser = jsonwebtoken_1.default.verify(authorization, jwtsecret);
         if (!verifiedUser) {
-            return res.redirect("/users/login");
+            return res.redirect("/login");
         }
         const { id } = verifiedUser;
         const user = await userModel_1.UserModel.findOne({ _id: id });
         if (!user) {
-            return res.redirect("/users/login");
+            return res.redirect("/login");
         }
-        req.user = verifiedUser;
+        req.user = {
+            id,
+            username: user.username
+        };
         next();
     }
     catch (err) {
-        return res.redirect("/users/login");
+        return res.redirect("/login");
     }
 };
 exports.auth = auth;

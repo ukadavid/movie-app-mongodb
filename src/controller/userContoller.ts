@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserModel } from "../model/userModel";
-import { registerUserSchema, loginUserSchema, variables } from "../utils/utils";
+import { registerUserSchema, loginUserSchema, options } from "../utils/utils";
 import { v4 as UUIDV4 } from "uuid";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -60,7 +60,7 @@ export const Login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
 
-    const validationResult = loginUserSchema.validate(req.body, variables);
+    const validationResult = loginUserSchema.validate(req.body, options);
 
     if (validationResult.error) {
       return res.render("login", {

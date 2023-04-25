@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ZeeFlix';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Tozee:QfZtjQFZh03jNyH1@cluster0.fzado2a.mongodb.net/zeeflix';
 
 const db = async (): Promise<void> => {
   try {

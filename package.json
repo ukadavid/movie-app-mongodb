@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "jest dist/tests/movieapp.test.js",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "compile": "tsc -w"
@@ -10,6 +11,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
@@ -25,14 +27,23 @@
     "typescript": "^5.0.2",
     "uuid": "^9.0.0"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.17",
     "@types/http-errors": "^2.0.1",
+    "@types/jest": "^29.5.1",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/morgan": "^1.9.4",
     "@types/node": "^18.15.10",
-    "@types/uuid": "^9.0.1"
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^9.0.1",
+    "jest": "^29.5.0",
+    "mongodb-memory-server": "^8.12.2",
+    "supertest": "^6.3.3"
   }
 }

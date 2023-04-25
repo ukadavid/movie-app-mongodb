@@ -51,7 +51,7 @@ exports.Register = Register;
 const Login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const validationResult = utils_1.loginUserSchema.validate(req.body, utils_1.variables);
+        const validationResult = utils_1.loginUserSchema.validate(req.body, utils_1.options);
         if (validationResult.error) {
             return res.render("login", {
                 error: validationResult.error.details[0].message,
