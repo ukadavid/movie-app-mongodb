@@ -9,7 +9,7 @@ const moviesModel_1 = require("../model/moviesModel");
 const utils_1 = require("../utils/utils");
 const router = express_1.default.Router();
 router.get("/login", (req, res, next) => {
-    res.render("Login");
+    res.render("Userlogin");
 });
 router.get("/register", (req, res, next) => {
     res.render("Register");

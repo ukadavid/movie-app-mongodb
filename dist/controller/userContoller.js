@@ -74,7 +74,7 @@ const Login = async (req, res) => {
             return res.redirect("/dashboard");
         }
         else {
-            return res.render("Login", {
+            return res.render("login", {
                 error: "Invalid email or password",
             });
         }

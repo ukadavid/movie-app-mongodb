@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 
 router.get("/login", (req: Request, res: Response, next: NextFunction) => {
-  res.render("Login");
+  res.render("Userlogin");
 });
 
 router.get("/register", (req: Request, res: Response, next: NextFunction) => {
