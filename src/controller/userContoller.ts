@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { UserModel } from "../model/userModel";
 import { registerUserSchema, loginUserSchema, options } from "../utils/utils";
-import { v4 as UUIDV4 } from "uuid";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
