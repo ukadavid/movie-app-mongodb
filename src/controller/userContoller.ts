@@ -63,7 +63,7 @@ export const Login = async (req: Request, res: Response) => {
     const validationResult = loginUserSchema.validate(req.body, options);
 
     if (validationResult.error) {
-      return res.render("login", {
+      return res.render("Login", {
         error: validationResult.error.details[0].message,
       });
     }
@@ -71,7 +71,7 @@ export const Login = async (req: Request, res: Response) => {
     const user = await UserModel.findOne({ email });
 
     if (!user) {
-      return res.render("login", {
+      return res.render("Login", {
         error: "Invalid email or password",
       });
     }
@@ -90,7 +90,7 @@ export const Login = async (req: Request, res: Response) => {
     if (isMatch) {
       return res.redirect("/dashboard");
     } else {
-      return res.render("login", {
+      return res.render("Login", {
         error: "Invalid email or password",
       });
     }
