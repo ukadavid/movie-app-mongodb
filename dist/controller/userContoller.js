@@ -53,13 +53,13 @@ const Login = async (req, res) => {
         const { email, password } = req.body;
         const validationResult = utils_1.loginUserSchema.validate(req.body, utils_1.options);
         if (validationResult.error) {
-            return res.render("Login", {
+            return res.render("login", {
                 error: validationResult.error.details[0].message,
             });
         }
         const user = await userModel_1.UserModel.findOne({ email });
         if (!user) {
-            return res.render("Login", {
+            return res.render("login", {
                 error: "Invalid email or password",
             });
         }
